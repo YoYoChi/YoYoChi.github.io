@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vue study</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css"></link>
+	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css"></link>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat%3A700%2C500%2C300%7CHind%3A700%7COpen+Sans%3A400%2C300%2C600%7CPlayfair+Display%3A400">
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+	<style>
+		.img {
+			width: 23%;
+			height: 50%;
+			float: left;
+			padding: 1%;
+			margin: .5%;
+			border: 1px solid #eee;
+			box-shadow: 3px 3px 5px #ccc;
+		}
+		.img img{
+			width: 100%;
+		}
+		.img p{
+			font-size: : 56px;
+			font-family: "Montserrat";
+			text-align: center;
+			color: red;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="myView">
+		
+		<div id="myPage">
+			<sell-section></sell-section>
+			
+		</div>
+	</div>
+	<template id="sellTemplate">
+		<div class="sell">
+		    <div class="img" v-for="item in sells">
+		    	<p>{{ item.price }}</p>
+		    	<img :src="'img/'+item.pic"></img>
+		    	
+		    </div>
+		    
+		</div>
+	</template>
+	<script src="node_modules/jquery/dist/jquery.min.js" charset="UTF-8"></script>
+	<script src="node_modules/vue/dist/vue.min.js" charset="UTF-8"></script>
+	<script src="node_modules/fullpage.js/dist/jquery.fullpage.min.js" charset="UTF-8"></script>
+	<script src="Script/index.js" charset="UTF-8"></script>
+
+	<script>
+
+		var myView = new Vue({
+			el: '#myView',
+			
+			/* 局部註冊 (Local Registration) */
+			components: {
+				'sell-section': {
+					template: '#sellTemplate', /* 樣板選取器 */
+					data: function() {
+	                return {
+	                    sells : [{ 
+	                    	pic:'sell-2-1.jpg',price:450
+						},{ 
+	                    	pic:'sell-2-3.jpg',price:500
+						},{ 
+	                    	pic:'sell-1-1.jpg',price:'800 沒有毛毯'
+						},{ 
+	                    	pic:'sell-1-2.jpg',price:800
+						},{ 
+	                    	pic:'sell-3-1.jpg',price:200
+						},{ 
+	                    	pic:'sell-3-2.jpg',price:80
+						},{ 
+	                    	pic:'sell-3-3.jpg',price:100
+						},{ 
+	                    	pic:'sell-2-2.jpg',price:500
+						},
+
+	                    ],
+
+
+	                }
+	             }
+	          },
+	          
+			}
+		})
+
+		// $('#fullpage').fullpage({
+
+		// 	menu: '#menu',
+		// 	anchors:['ABOUT', 'SASS','Fullpage.js'],
+		// 	sectionsColor : ['#ccc', '#fff','#ccc', '#fff'],
+		// });
+	</script>
+</body>
+</html>

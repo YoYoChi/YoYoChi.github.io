@@ -1,0 +1,24 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "vue & sass study",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-CSS": "node-sass --output-style=expanded --watch scss/ -o CSS/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://yochiyao@bitbucket.org/yochiyao/demo-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/yochiyao/demo-project#readme",
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "fullpage.js": "^2.9.7",
+    "jquery": "^3.3.1",
+    "node-sass": "^4.9.0",
+    "vue": "^2.5.16"
+  }
+}
